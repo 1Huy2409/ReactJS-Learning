@@ -1,42 +1,21 @@
-import logo from './logo.svg';
-import { useState } from 'react';
 import './App.css';
-
-function App() {
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
-  return(
-    <div>
-      <MyButton />
-      <MyButton />
-    </div>
-  )
-}
-function MyButton()
-{
-  const [count, setCount] = useState(0);
-  function HandleClick ()
-  {
-    setCount(count+1);
-  }
+import Header from "./components/Header/index";
+import Navigation from './components/Navigation';
+import Content from './components/Content';
+import MainContent from './components/MainContent';
+import Footer from "./components/Footer/index";
+function App() {  
   return (
-    <button onClick={HandleClick}>Click me {count} times</button>
+    <>
+      <Header />
+      <Navigation />
+      <div className = "main">
+        <Content text = "content1" />
+        <MainContent />
+        <Content text = "content2" />
+      </div>
+      <Footer />
+    </>
   )
 }
 export default App;
